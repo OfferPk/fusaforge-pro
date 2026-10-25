@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bgGrad)" />
+
+  <!-- Window Header -->
+  <rect x="30" y="30" width="1140" height="60" rx="8" fill="#1f2937" />
+  <circle cx="60" cy="60" r="7" fill="#ef4444" />
+  <circle cx="85" cy="60" r="7" fill="#f59e0b" />
+  <circle cx="110" cy="60" r="7" fill="#10b981" />
+
+  <text x="145" y="66" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="bold">FuSaForge Pro — ISO 26262 Automotive ASIL Decomposition &amp; Safety Studio</text>
+  <rect x="940" y="45" width="210" height="30" rx="4" fill="url(#accentGrad)" />
+  <text x="955" y="65" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="bold">ISO 26262:2018 ASIL D</text>
+
+  <!-- Main Grid Layout -->
+  <!-- Left Panel: HARA & Decomposition -->
+  <rect x="30" y="110" width="680" height="580" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1.5" />
+  <text x="50" y="145" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="bold">Hazard Analysis (HARA) &amp; ASIL Decomposition</text>
+  <rect x="520" y="130" width="170" height="22" rx="4" fill="#7f1d1d" />
+  <text x="535" y="146" fill="#fca5a5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="bold">TARGET ASIL: ASIL D</text>
+
+  <!-- Content Box -->
+  <rect x="50" y="170" width="640" height="500" rx="6" fill="#090d16" stroke="#1f2937" stroke-width="1" />
+  
+  <g font-family="monospace" font-size="12">
+    <text x="70" y="205" fill="#60a5fa" font-weight="bold">=== HARA ASSESSMENT (ISO 26262-3 CLAUSE 6) ===</text>
+    <text x="70" y="230" fill="#a7f3d0">Hazard Description      : Unintended steering assist torque locking</text>
+    <text x="70" y="250" fill="#f87171">Severity (S)            : S3 (Fatal injury / multiple vehicle collision)</text>
+    <text x="70" y="270" fill="#f87171">Exposure (E)            : E4 (High operational probability &gt; 10%)</text>
+    <text x="70" y="290" fill="#f87171">Controllability (C)     : C3 (Difficult / uncontrollable by average driver)</text>
+    <text x="70" y="310" fill="#f87171" font-weight="bold">Resulting ASIL Rating   : ASIL D (Safety Goal Required)</text>
+
+    <text x="70" y="350" fill="#60a5fa" font-weight="bold">=== ASIL DECOMPOSITION (ISO 26262-9 CLAUSE 5) ===</text>
+    <text x="70" y="375" fill="#fbbf24">Original Safety Goal    : SG_01 [ASIL D] "Prevent unintended steering lock"</text>
+    <text x="70" y="395" fill="#d1d5db">Redundant Channel A     : ASIL B(D) - Primary MCU Dual-Core Lockstep</text>
+    <text x="70" y="415" fill="#d1d5db">Redundant Channel B     : ASIL B(D) - Independent Watchdog &amp; Safe State Relay</text>
+    <text x="70" y="435" fill="#34d399">Decomposition Algebra   : ASIL D = ASIL B(D) + ASIL B(D) (VALID)</text>
+    <text x="70" y="455" fill="#34d399">FFI / DFA Status        : CONFIRMED (Freedom from Interference Proven)</text>
+
+    <text x="70" y="495" fill="#60a5fa" font-weight="bold">=== HARDWARE ARCHITECTURAL METRICS (ISO 26262-5) ===</text>
+    <text x="70" y="520" fill="#34d399">Single-Point Metric SPFM: 99.89% (ASIL D Normative Target &gt;= 99.0%)</text>
+    <text x="70" y="540" fill="#34d399">Latent Fault Metric LFM : 99.68% (ASIL D Normative Target &gt;= 90.0%)</text>
+    <text x="70" y="560" fill="#34d399">Random HW Failure PMHF  : 1.90 FIT (ASIL D Normative Target &lt; 10 FIT)</text>
+    <text x="70" y="580" fill="#a7f3d0">FTTI Time Budget        : 20.0 ms (Safe State reached in 8.5 ms)</text>
+  </g>
+
+  <!-- Right Upper Panel: Metrics Card -->
+  <rect x="730" y="110" width="440" height="260" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1.5" />
+  <text x="750" y="145" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="bold">Hardware Reliability Target Cards</text>
+  <rect x="750" y="165" width="400" height="185" rx="6" fill="#090d16" stroke="#1f2937" stroke-width="1" />
+  
+  <rect x="765" y="180" width="115" height="70" rx="4" fill="#172033" />
+  <text x="775" y="200" fill="#9ca3af" font-size="10">SPFM</text>
+  <text x="775" y="225" fill="#34d399" font-family="monospace" font-size="16" font-weight="bold">99.89%</text>
+  <text x="775" y="242" fill="#38bdf8" font-size="9">Target: &gt;=99%</text>
+
+  <rect x="892" y="180" width="115" height="70" rx="4" fill="#172033" />
+  <text x="902" y="200" fill="#9ca3af" font-size="10">LFM</text>
+  <text x="902" y="225" fill="#34d399" font-family="monospace" font-size="16" font-weight="bold">99.68%</text>
+  <text x="902" y="242" fill="#38bdf8" font-size="9">Target: &gt;=90%</text>
+
+  <rect x="1020" y="180" width="115" height="70" rx="4" fill="#172033" />
+  <text x="1030" y="200" fill="#9ca3af" font-size="10">PMHF</text>
+  <text x="1030" y="225" fill="#34d399" font-family="monospace" font-size="16" font-weight="bold">1.90 FIT</text>
+  <text x="1030" y="242" fill="#38bdf8" font-size="9">Target: &lt;10 FIT</text>
+
+  <text x="765" y="280" fill="#d1d5db" font-family="monospace" font-size="11">Total Failure Rate: 622.7 FIT</text>
+  <text x="765" y="300" fill="#a7f3d0" font-family="monospace" font-size="11">Safety Mechanism Diagnostic Coverage: 99.5%</text>
+  <text x="765" y="320" fill="#9ca3af" font-family="monospace" font-size="10">Status: All ISO 26262 Part 5 Targets Met</text>
+
+  <!-- Right Lower Panel: Normative Auditor -->
+  <rect x="730" y="390" width="440" height="300" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1.5" />
+  <text x="750" y="425" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="bold">10-Point Normative ISO 26262 Scorecard</text>
+  <rect x="750" y="445" width="400" height="40" rx="6" fill="#064e3b" />
+  <text x="765" y="470" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="bold">COMPLIANCE: 100.0% (ASIL D CERTIFIED)</text>
+
+  <!-- Audit Checklist items -->
+  <g font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11">
+    <text x="760" y="510" fill="#10b981">✓</text>
+    <text x="780" y="510" fill="#d1d5db">Gate 1: Safety Management &amp; Safety Plan (Part 2)</text>
+    
+    <text x="760" y="535" fill="#10b981">✓</text>
+    <text x="780" y="535" fill="#d1d5db">Gate 2: Item Definition &amp; Boundaries (Part 3 Cl 5)</text>
+
+    <text x="760" y="560" fill="#10b981">✓</text>
+    <text x="780" y="560" fill="#d1d5db">Gate 3: HARA &amp; Safety Goals Formulation (Part 3 Cl 6)</text>
+
+    <text x="760" y="585" fill="#10b981">✓</text>
+    <text x="780" y="585" fill="#d1d5db">Gate 4: Single-Point Fault Metric SPFM &gt;= 99% (Part 5)</text>
+
+    <text x="760" y="610" fill="#10b981">✓</text>
+    <text x="780" y="610" fill="#d1d5db">Gate 5: Probabilistic Metric PMHF &lt; 10 FIT (Part 5)</text>
+
+    <text x="760" y="635" fill="#10b981">✓</text>
+    <text x="780" y="635" fill="#d1d5db">Gate 6: ASIL Decomposition &amp; DFA Freedom (Part 9)</text>
+
+    <text x="760" y="660" fill="#9ca3af" font-style="italic">4 Additional Clauses Satisfied (10/10 Normative Passed)</text>
+  </g>
+</svg>
